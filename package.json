@@ -1,0 +1,23 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "my first socket.io app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucia Lagos\u001b[A\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[Dchat",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucyloules/chat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lucyloules/chat/issues"
+  },
+  "homepage": "https://github.com/lucyloules/chat#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "socket.io": "^2.0.4"
+  }
+}
