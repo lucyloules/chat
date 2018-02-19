@@ -1,79 +1,36 @@
-<!doctype html>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Socket.IO chat</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font: 13px Helvetica, Arial;
-    }
-
-    form {
-      background: #000;
-      padding: 3px;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-
-    form input {
-      border: 0;
-      padding: 10px;
-      width: 90%;
-      margin-right: .5%;
-    }
-
-    form button {
-      width: 9%;
-      background: rgb(130, 224, 255);
-      border: none;
-      padding: 10px;
-    }
-
-    #messages {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    #messages li {
-      padding: 5px 10px;
-    }
-
-    #messages li:nth-child(odd) {
-      background: #eee;
-    }
-  </style>
+  <!-- Icono de pestaña -->
+  <link rel="shortcut icon" href="./assets/img/lu.jpg" type="image/jpg">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900|Sacramento" rel="stylesheet">
+  <!-- Materialize Css -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="main.css">
 </head>
 
-<body>
+<body class="light-blue lighten-3">
+  <nav class="white">
+    <div class="nav-wrapper">
+      <a href="#" alt="Chat" class="brand-logo center">
+        <img class="logo center" src="chat.png" alt="Socket Chat"> 
+      </a>
+    </div>
+  </nav>
   <ul id="messages"></ul>
-  <form action="">
-    <input id="m" autocomplete="off" />
-    <button>Send</button>
+  <form class=" light-blue lighten-5" action="">
+    <input class=" light-blue lighten-5" id="m" autocomplete="off" />
+    <button class="btn waves-effect waves-light blue" type="submit" name="action">Enviar
+      <i class="material-icons right">send</i>
+    </button>
   </form>
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
-  <script>
-    $(function () {
-      var socket = io('http://34.227.11.223:3000'); //se sube al navegador
-      $('form').submit(function () {
-        socket.emit('chat message', $('#m').val());
-        $('#m').val('');
-        return false;
-      });
-      socket.on('chat message', function (msg) {
-        $('#messages').append($('<li>').text(msg));
-      });
-    });
-  </script>
-
+  <script src="app.js"></script>
 </body>
-
 </html>
